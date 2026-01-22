@@ -1,21 +1,24 @@
 const habitats = [
-  { id: "bosque", name: "🌲 Bosque", points: 2 },
-  { id: "montana", name: "⛰️ Montaña", points: 3 },
-  { id: "agua", name: "🌊 Agua", points: 2 },
-  { id: "campo", name: "🌾 Campo", points: 1 }
+  { id: "bosque", name: "Bosques", icon: "🌲", pts: 2 },
+  { id: "montana1", name: "Montaña (H1)", icon: "⛰️", pts: 1 },
+  { id: "montana2", name: "Montaña (H2)", icon: "⛰️⛰️", pts: 3 },
+  { id: "montana3", name: "Montaña (H3)", icon: "⛰️⛰️⛰️", pts: 7 },
+  { id: "rio", name: "Río", icon: "🌊", pts: 1 },
+  { id: "campo", name: "Campos", icon: "🌾", pts: 5 },
+  { id: "pueblo", name: "Pueblos", icon: "🏠", pts: 3 }
 ];
 
 const animals = [
-  { id: "oso", name: "Oso", points: 8, minPlayers: 2 },
-  { id: "lobo", name: "Lobo", points: 6, minPlayers: 2 },
-  { id: "zorro", name: "Zorro", points: 5, minPlayers: 2 },
-  { id: "conejo", name: "Conejo", points: 4, minPlayers: 2 },
-  { id: "ciervo", name: "Ciervo", points: 7, minPlayers: 3 },
-  { id: "oveja", name: "Oveja", points: 3, minPlayers: 3 },
-  { id: "castor", name: "Castor", points: 6, minPlayers: 3 },
-  { id: "nutria", name: "Nutria", points: 5, minPlayers: 3 },
-  { id: "aguila", name: "Águila", points: 6, minPlayers: 4 },
-  { id: "halcon", name: "Halcón", points: 5, minPlayers: 4 },
-  { id: "rana", name: "Rana", points: 4, minPlayers: 4 },
-  { id: "jabali", name: "Jabalí", points: 7, minPlayers: 4 }
+  { id: "oso", name: "Oso", pts: [2, 5, 8] },
+  { id: "lobo", name: "Lobo", pts: [4, 9] },
+  { id: "rana", name: "Rana", pts: [2, 4, 7] },
+  { id: "ciervo", name: "Ciervo", pts: [3, 7, 12] },
+  { id: "zorro", name: "Zorro", pts: [3, 5] },
+  { id: "nutria", name: "Nutria", pts: [5, 10] }
+];
+
+const spirits = [
+  { id: "esp_rio", name: "Espíritu del Río", link: "rio" },
+  { id: "esp_montana", name: "Espíritu de la Cumbre", link: "montana3" },
+  { id: "esp_bosque", name: "Espíritu del Bosque", link: "bosque" }
 ];
