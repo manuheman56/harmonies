@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Harmonies – Familia Herrera Rubia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <section id="screen-welcome" class="screen active">
+    <div class="welcome-card">
+      <div class="nature-header"></div>
+      <h1>Bienvenida</h1>
+      <h2 style="color:#6ab04c">Familia Herrera Rubia</h2>
+      <p>Calculadora de Ecosistemas</p>
+      <button class="primary" id="welcome-start-btn">Comenzar Partida</button>
+    </div>
+  </section>
+
+  <section id="screen-players" class="screen">
+    <h2>¿Cuántos jugáis?</h2>
+    <div class="grid-2">
+      <button class="secondary player-count" data-count="2">2 Jugadores</button>
+      <button class="secondary player-count" data-count="3">3 Jugadores</button>
+      <button class="secondary player-count" data-count="4">4 Jugadores</button>
+    </div>
+  </section>
+
+  <section id="screen-names" class="screen">
+    <h2>Nombres de los arquitectos</h2>
+    <div id="names-container"></div>
+    <button class="primary" id="names-continue">Continuar</button>
+  </section>
+
+  <section id="screen-animals" class="screen">
+    <h2>Animales en la partida</h2>
+    <div id="animal-selection" class="grid-animals"></div>
+    <button class="primary" id="animals-continue">Confirmar Animales</button>
+  </section>
+
+  <section id="score-screen" class="screen">
+    <h2 id="score-player-name"></h2>
+    <div class="card">
+      <h3>🌲 Paisajes</h3>
+      <div id="habitats-container"></div>
+    </div>
+    <div class="card">
+      <h3>🐾 Animales</h3>
+      <div id="animals-container"></div>
+    </div>
+    <button class="primary" id="confirm-score">Siguiente Arquitecto</button>
+  </section>
+
+  <section id="screen-results" class="screen">
+    <h2>🏆 Resultados Finales</h2>
+    <div id="results-list"></div>
+    <button class="primary" onclick="location.reload()">Nueva Partida</button>
+  </section>
+
+  <script src="rules.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
