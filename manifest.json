@@ -1,0 +1,8 @@
+{
+  "name": "Harmonies – Puntuación",
+  "short_name": "Harmonies",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f4f6f3",
+  "theme_color": "#4caf50"
+}

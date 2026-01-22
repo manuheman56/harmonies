@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Harmonies – Puntuación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section id="screen-start" class="screen active">
+  <h1>Harmonies</h1>
+  <button class="primary" id="start-btn">Empezar</button>
+</section>
+
+<section id="screen-players" class="screen">
+  <h2>Jugadores</h2>
+  <button class="secondary player-count" data-count="2">2</button>
+  <button class="secondary player-count" data-count="3">3</button>
+  <button class="secondary player-count" data-count="4">4</button>
+  <button class="primary" id="players-continue" disabled>Continuar</button>
+</section>
+
+<section id="screen-names" class="screen">
+  <h2>Nombres</h2>
+  <div id="names-container"></div>
+  <button class="primary" id="names-continue">Continuar</button>
+</section>
+
+<section id="screen-animals" class="screen">
+  <h2>Animales en la partida</h2>
+  <p class="hint">Selecciona los animales presentes según el número de jugadores.</p>
+  <div id="animal-selection"></div>
+  <button class="primary" id="animals-continue">Continuar</button>
+</section>
+
+<section id="screen-select" class="screen">
+  <h2>Selecciona jugador</h2>
+  <div id="player-list"></div>
+</section>
+
+<section id="screen-score" class="screen">
+  <h2 id="score-player-name"></h2>
+
+  <div class="card">
+    <h3>Paisajes</h3>
+    <p class="hint">Introduce el número de estructuras válidas.</p>
+    <div id="habitats-container"></div>
+  </div>
+
+  <div class="card">
+    <h3>Animales</h3>
+    <p class="hint">Cada jugador puede puntuar los mismos animales de forma independiente.</p>
+    <div id="animals-container"></div>
+  </div>
+
+  <button class="primary" id="confirm-score">Confirmar</button>
+</section>
+
+<section id="screen-results" class="screen">
+  <h2>Resultados</h2>
+  <div id="results-list"></div>
+  <button class="primary" onclick="location.reload()">Nueva partida</button>
+</section>
+
+<script src="rules.js"></script>
+<script src="icons.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
