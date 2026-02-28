@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmonies Score</title>
+
+  <meta name="theme-color" content="#065f46">
+  <link rel="manifest" href="manifest.json">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-emerald-50">
+
+<!-- 🦁 PORTADA -->
+<div id="coverScreen"
+  class="fixed inset-0 bg-emerald-900 flex flex-col items-center justify-center text-white z-50 text-center p-6">
+  <img src="assets/ui/leon-portada.webp" class="w-48 rounded-2xl shadow-2xl mb-6">
+  <h1 class="text-3xl font-bold mb-2">Harmonies Score</h1>
+  <p class="text-emerald-200 mb-6">Recuento oficial de puntos</p>
+  <button onclick="startApp()"
+    class="bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold">
+    Comenzar partida
+  </button>
+</div>
+
+<main class="max-w-4xl mx-auto p-4 space-y-6">
+
+<!-- JUGADORES -->
+<section class="bg-white rounded-2xl p-4 shadow">
+  <h2 class="text-xl font-bold mb-3">👥 Jugadores</h2>
+  <div id="playersContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+</section>
+
+<!-- ZONA DE PUNTUACIÓN -->
+<section class="bg-white rounded-2xl p-4 shadow space-y-4">
+
+  <h2 class="text-xl font-bold">📊 Puntuación jugador activo</h2>
+
+  <!-- ANIMALES -->
+  <div>
+    <h3 class="font-bold mb-2">🐾 Animales</h3>
+    <div id="animalButtons"
+      class="grid grid-cols-3 sm:grid-cols-4 gap-3 max-h-64 overflow-y-auto">
+    </div>
+  </div>
+
+  <!-- ÁRBOLES -->
+  <div>
+    <h3 class="font-bold">🌲 Árboles</h3>
+    <div class="grid grid-cols-3 gap-2">
+      <input type="number" min="0" placeholder="x1"
+        onchange="setVal('trees','t1',this.value)">
+      <input type="number" min="0" placeholder="x2"
+        onchange="setVal('trees','t2',this.value)">
+      <input type="number" min="0" placeholder="x3"
+        onchange="setVal('trees','t3',this.value)">
+    </div>
+  </div>
+
+  <!-- MONTAÑAS -->
+  <div>
+    <h3 class="font-bold">⛰️ Montañas adyacentes</h3>
+    <div class="grid grid-cols-2 gap-2">
+      <input type="number" min="0" placeholder="Altura 2"
+        onchange="setVal('mountains','h2',this.value)">
+      <input type="number" min="0" placeholder="Altura 3"
+        onchange="setVal('mountains','h3',this.value)">
+    </div>
+  </div>
+
+  <!-- PRADOS -->
+  <div>
+    <h3 class="font-bold">🌾 Prados</h3>
+    <input type="number" min="0" placeholder="Grupos válidos"
+      onchange="players[active].fields=this.value; recalc()">
+  </div>
+
+  <!-- EDIFICIOS -->
+  <div>
+    <h3 class="font-bold">🏠 Edificios</h3>
+    <input type="number" min="0" placeholder="Edificios con 3 colores"
+      onchange="players[active].buildings=this.value; recalc()">
+  </div>
+
+  <!-- AGUA -->
+  <div>
+    <h3 class="font-bold">💧 Agua</h3>
+    <select onchange="players[active].water.side=this.value; recalc()">
+      <option value="A">Río</option>
+      <option value="B">Islas</option>
+    </select>
+    <input type="number" min="0" placeholder="Longitud / nº islas"
+      onchange="players[active].water.value=this.value; recalc()">
+  </div>
+
+  <!-- ESPÍRITUS -->
+  <div>
+    <h3 class="font-bold">✨ Espíritus</h3>
+    <input type="number" min="0"
+      onchange="players[active].spirits=this.value; recalc()">
+  </div>
+
+</section>
+
+<!-- RANKING -->
+<section class="bg-white rounded-2xl p-4 shadow">
+  <h2 class="text-xl font-bold mb-2">🏆 Ranking</h2>
+  <div id="rankingList" class="space-y-2"></div>
+  <p class="text-xs text-gray-500 mt-2">
+    En empate gana quien colocó más cubos de animal.
+  </p>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
