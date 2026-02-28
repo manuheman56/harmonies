@@ -76,8 +76,9 @@ function renderAnimals(){
   document.getElementById("animalButtons").innerHTML =
     ANIMALS.map(a=>`
       <button onclick="addAnimal()"
-        class="bg-white rounded-xl shadow p-2 active:scale-95">
-        <img src="${a.img}" class="h-20 w-full object-cover rounded">
+        class="animal-btn bg-white rounded-xl shadow p-2 active:scale-95">
+        <img src="${a.img}" alt="${a.id}"
+             class="animal-img">
       </button>
     `).join("");
 }

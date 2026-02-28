@@ -1,3 +1,13 @@
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+/* ==== ANIMALES ==== */
+.animal-btn {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animal-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
